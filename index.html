@@ -32,27 +32,33 @@
     }
     .photos {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 10px;
       margin-top: 40px;
     }
     .photos img {
-      width: 300px;
-      height: 300px;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
       object-fit: cover;
       border-radius: 10px;
-      margin: 0 20px;
-      transform: rotate(0deg);
       transition: transform 0.5s ease;
     }
     .photos img:hover {
       transform: rotate(5deg);
+    }
+    @media (max-width: 600px) {
+      .photos img {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <div class="birthday-card" role="region" aria-labelledby="greeting">
     <div class="confetti" aria-hidden="true">🎉🎂🎈</div>
-    <h1 id="greeting">Happy Birthday, Aldi!❤️</h1>
+    <h1 id="greeting">Happy Birthday, Aldi❤️</h1>
     <div class="photos">
       <!-- Replace these with your local images -->
       <img src="S__23642214_0.jpg" alt="Image 1">
